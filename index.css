@@ -1,47 +1,199 @@
-body{
-    background-color: whitesmoke;
-}
-
-.header {
-    background-color: black;
-    display: flex;
+body {
     margin: 0;
-    padding-left: 10px;
-}
+    padding: 0;
+    height: 1000px;
+    background-color: rgb(4, 52, 100);
+    /* border: 2px solid; */
 
-.header h1 {
-    color: white;
 }
-
-form {
+p {
+    margin: 0;
+    
+}
+.top{
     display: flex;
-    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin: 20px 50px;
-}
-
-.search_input {
-    height: 24px;
-    width: 40%;
-
-}
-
-.search_button {
-    height: 30px;
-    cursor: pointer;
-}
-
-.songlist {
-    background-color: darkred;
-    padding: 20px;
-    background-image: url(https://media.istockphoto.com/id/1256944025/photo/trendy-girl-singing-favorite-song-out-loud-in-phone-as-mic-wearing-wireless-headphones.jpg?s=612x612&w=0&k=20&c=GIzdjh2QPC7y4_CcFZK-CbwLVFFQPpHpRb3LEnQo-nU=);
-    background-size: 100%;
+    height: 100px;
     width: 100%;
-    height: 500px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    background-color: #101820FF;
+    color: white; 
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgb(16, 190, 120);
+   
+}
+.image{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    object-fit: cover;
+    object-position: bottom;
+
+}
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a z-index higher than the top section */
+}
+.song-collection{
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1px;
+    row-gap: 40px;
+    margin-left:10px ;
+    margin-right: 10px;
+    padding: 10px;
+}
+@media (max-width: 660px) {
+    .song-collection {
+        grid-template-columns: 1fr ;
+    }
+    
+  }
+
+  @media (min-width: 661px) and (max-width:960px) {
+    .song-collection {
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 961px) and (max-width:1269px) {
+    .song-collection {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1270px) {
+    .song-collection {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+  /* @media only screen and (max-width: 660px) {
+    h1 {
+        font-size: 14px;
+        color: red;
+    }
+} */
+.gana {
+    font-family: Permanent Marker;
+    font-size: 45px;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: rgb(16, 190, 120);
+    cursor: pointer;
+   
+}
+.name {
+    font-family: Permanent Marker;
+    font-size: 55px;
+    padding-left: 30px;
+    color: rgb(12, 137, 75);
+    white-space: nowrap;
+    cursor: pointer;
+    
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 660px) {
+    .gana {
+        font-size: 28px; /* Adjust the font size as needed */
+        color: rgb(255, 157, 0);
+    }
+
+    .name {
+        font-size: 35px; /* Adjust the font size as needed */
+        color: rgb(255, 230, 0);
+    }
+    .search .search-button{
+        width: 60px;
+        background-color: rgb(255, 157, 0);
+        border: 1px dotted rgb(198, 107, 3);
+    }
+    .top{
+        background-color: black;
+        border-bottom: 1px solid rgb(255, 157, 0);   
+    }
+    .search-box{
+        border: 2px dotted rgb(16, 190, 120); 
+    }
+}
+.search {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 5px;
+    max-width: 400px;
+    align-items: center;
+
+}
+.search-box {
+    height: 40px;
+    border-radius: 0 25px 0 25px;
+    -webkit-border-radius: 0 25px 0 25px;
+    -moz-border-radius: 0 25px 0 25px;
+    -ms-border-radius: 0 25px 0 25px;
+    -o-border-radius: 0 25px 0 25px;
+    border: 2px dotted rgb(16, 190, 120); 
+    margin-right: 0;
+    flex: 1;
+    width: 0;
+    font-size: 24px;
+    font-family: Instrument Serif;
+}
+.search-box::placeholder{
+    font-family: Instrument Serif;
+    font-style: oblique;
+    font-size: 25px;
+    padding-left: 10px;
+    color:  #101820FF;
+}
+.search-button {
+    height: 46px;
+    border: 2px dotted black;
+    margin-right: 30px;
+    border-radius:  25px 0 25px 0;
+    -webkit-border-radius:  25px 0 25px 0;
+    -moz-border-radius:  25px 0 25px 0;
+    -ms-border-radius:  25px 0 25px 0;
+    -o-border-radius:  25px 0 25px 0;
+    background-color: rgb(16, 190, 120);
+    font-family: Instrument Serif;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.search-button:hover{
+    background-color: rgb(141, 85, 246);
+    
+}
+.search-button:active{
+    opacity: 0.7;
+}
+.song {
+    display: grid;          /*  This is for align items in center*/
+}
+.songname{
+    font-family: Permanent Marker;
+    font-size: 24px;
+    font-weight: 300;
 }
 
-.song h3 {
-    color: white;
+
+audio::-webkit-media-controls-panel {
+    background-color:rgb(157, 226, 201);
+    
 }
+
